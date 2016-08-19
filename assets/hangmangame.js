@@ -54,15 +54,20 @@ function gamePlay(strValue) {
 		            gameReset();
 		            console.log("Computer picks new word: " + computerWord);
 		        } 
-		        else {
+		        else if(computerWord.toString() === dashes.toString()) {
+		        	gameReset();
+		        	console.log("you win");
+		        } else
+		        	{
 		        	guesses--;
 		        	userGuesses.push(userInput);
 					for (var n = 0; n < computerWord.length; n++) {
 					    if (computerWord[n] === userInput) {
 						    dashes[n] = userInput;
 						    document.getElementById("answer").innerHTML = dashes.join(" ");
-
-					}
+						    console.log(computerWord.toString());
+						    console.log(dashes.toString());
+						}
 				}
 	        }
 	    }
