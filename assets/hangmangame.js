@@ -34,41 +34,42 @@ function gameReset(){
 	}
 }
 
+
 document.onkeyup = function(event){
 
 	var userInput = String.fromCharCode(event.keyCode).toLowerCase();
 
 	console.log(currentWord);
 
-	function validate(strValue) {
+	
+function gamePlay(strValue) {
 	var letterCheck  = /^[a-z]+$/;
 		if (letterCheck.test(strValue) == false) {
-			alert("Only input a letter from A through Z");
+			console.log("Only input a letter from A through Z");
 		}
 		else if (userGuesses.indexOf(userInput) != -1) {
-	          		alert("You already picked this letter. Pick another.");
+	          		console.log("You already picked this letter. Pick another.");
 	          	}  
 	          	else if (guesses == 1) {
 		            gameReset();
 		            console.log("Computer picks new word: " + computerWord);
-		        }
+		        } 
 		        else {
-		          	for (var n = 0; n < computerWord.length; n++) {
-		          		if (computerWord[n] === userInput) {
-		          			dashes[n] = userInput;
-		          			document.getElementById("answer").innerHTML = dashes.join(" ");
-		          		}
-		          	}
-		        }
+		        	guesses--;
+		        	userGuesses.push(userInput);
+					for (var n = 0; n < computerWord.length; n++) {
+					    if (computerWord[n] === userInput) {
+						    dashes[n] = userInput;
+						    document.getElementById("answer").innerHTML = dashes.join(" ");
 
-	//           	// {
-	//           	// 	guesses--
-	//           	// 	userGuesses.push(userInput);
-	//           	// }
-          		
-    }
+					}
+				}
+	        }
+	    }
 
-    validate(userInput);
+
+
+    gamePlay(userInput);
 
 	var html = 	"<h1>The Hangman Game</h1>" +
 				"<p>Press any key to start!</p>" +
