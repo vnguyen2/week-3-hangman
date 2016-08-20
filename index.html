@@ -3,20 +3,40 @@
 	<meta charset="UTF-8">
 	<title>Hang some food?</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/cutestrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script rel="stylesheet" type="text/javascript" src="assets/hangmangame.js"></script>
+	<script rel="stylesheet" type="text/javascript" src="assets/scripts/hangmangame.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="game">
-			<h1>The Hangman Game</h1>
-			<p>Press any key to start!</p>
-			<p>Wins: 0</p>
-			<p>Losses: 0</p>
-			<p>Guesses left: 10</p>
-			<p>Your Guesses so far: </p>
+	
+	<audio src="assets/audio/win.mp3" class="win"></audio>
+	<audio src="assets/audio/lose.mp3" class="lose"></audio>
+	<audio src="assets/audio/wrong.mp3" class="wrong"></audio>
+	 
+	<div class="wrapper">
+		<div class="grid">
+		<section class="grid grid--medium border">
+			<div class="game">
+				<div>
+				<h1>The Hangry Game</h1>
+				<p>Press any key to start!</p>
+				<p>Wins: 0</p>
+				<p>Losses: 0</p>
+				<p>Guesses left: 10</p>
+				<p>Your Guesses so far: </p>
+				</div>
+			</div>
+		</section>
+		<section class="grid grid--medium border">
+				<div>
+				<h1>Current Word: </h1>
+				<p id="answer"></p>
+				<div>
+				<div class="winner"></div>
+				<div class="loser"></div>
+				<div class="newLetter"></div>
+		</section>
 		</div>
-		 <p id="answer"></p>
 	</div>
 </body>
 </html>
