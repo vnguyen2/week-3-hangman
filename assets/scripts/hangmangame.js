@@ -24,7 +24,7 @@ function gameReset(){
 	computerWord = words[Math.floor(Math.random() * words.length)];
 	dashes=[];
 	userGuesses = [];
-	guesses = 10;
+	guesses = 15;
 
 	for (var i = 0; i < computerWord.length; i++) {
 		dashes.push("_");
