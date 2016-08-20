@@ -17,7 +17,7 @@ window.onload = function() {
 			dashes.push("_");
 		}
 		currentWord = dashes.join(" ");
-		document.getElementById("answer").innerHTML = dashes.join(" ");
+		document.getElementById("answer").innerHTML = currentWord;
 }
 
 function gameReset(){
@@ -69,7 +69,7 @@ document.onkeyup = function(event){
 		        else if (guesses == 1) {
 		        	losses++;
 		        	document.querySelector('.lose').play()
-		        	document.querySelector('.loser').innerHTML = ('No food for you LOSER');
+		        	document.querySelector('.loser').innerHTML = ("No food for you LOSER");
 		            gameReset();
 		            console.log("Computer picks new word: " + computerWord);
 		        } 
